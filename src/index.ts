@@ -1,5 +1,5 @@
 const baseColors = [ 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' ]
-const baseStyles = [ 'reset', 'bold', 'faint', 'italic', 'underline', 'inverse', 'hidden', 'strike' ]
+const baseStyles = [ 'bold', 'faint', 'italic', 'underline', 'inverse', 'hidden', 'strike' ]
 
 type CCMethod = (text : string) => string
 
