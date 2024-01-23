@@ -1,45 +1,75 @@
-const baseColors = [ 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' ]
-const baseStyles = [ 'bold', 'faint', 'italic', 'underline', 'inverse', 'hidden', 'strike' ]
+import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod } from "./type"
 
-type CCMethod = (text : string) => string
+export const baseColors = [ 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' ] as const
+export const baseStyles = [ 'bold', 'faint', 'italic', 'underline', 'inverse', 'hidden', 'strike' ] as const
 
-const setANSI = (startNum : number, text : string, endNum : number) : string => {
-
+const setANSI = (startNum : number, text : string) : string => {
     const setStart = `\u001b[${startNum}m`
-    const setEnd = `\u001b[${endNum}m`
-
-    return `${setStart}${text}${setEnd}`
+    return `${setStart}${text}\u001b[0m`
 }
 
-const addMethod = (startNum : number, endNum : number) : CCMethod => {
-    return (text : string) => setANSI(startNum, text, endNum)
+const setColorANSI256 = (startNum : number, text : string) : string => {
+    const setStart = `\u001b[38;5;${startNum}m`
+    return `${setStart}${text}\u001b[0m`
 }
+
+const setBackgroundANSI256 = (startNum : number, text : string) : string => {
+    const setStart = `\u001b[48;5;${startNum}m`
+    return `${setStart}${text}\u001b[0m`
+}
+
+
+const addMethod = (startNum : number) : CCMethod => {
+    return (text : string) => setANSI(startNum, text)
+}
+
+// Add font colors method
+const colorMethod = baseColors.reduce((prev : object, element : string, index : number) : object => {
+    return {
+        ...prev,
+        [ element ] : addMethod(30 + index)
+    }
+}, {}) as ColorType
+
+// Add background colors method
+const backgroundMethod = baseColors.reduce((prev : object, element : string, index : number) : object => {
+    return {
+        ...prev,
+        [ element ] : addMethod(40 + index)
+    }
+}, {}) as ColorType
+
+// Add font style method
+const fontStyleMethod = baseStyles.reduce((prev : object, element : string, index : number) : object => {
+    return {
+        ...prev,
+        [ element ] : addMethod(index + 1)
+    }
+}, {}) as CCFontStyleType
+
+// Style reset method
+const resetMethod : CCMethod = (text : string) => {
+    return setANSI(0, text)
+} 
+
+// Custom color method
+const colorCustomMethod : CustomMethod = (colorNum : number, text : string) => {
+    return setColorANSI256(colorNum, text)
+} 
+
+// Custom background method
+const backgroundCustomMethod : CustomMethod = (colorNum : number, text : string) => {
+    return setBackgroundANSI256(colorNum, text)
+} 
 
 // Colorful Console
-let CC = {
-    color : {},
-    background : {},
-    reset : (text : string) => {
-        return setANSI(0, text, 0)
-    }
+const CC : CCType = {
+    color : colorMethod,
+    bg : backgroundMethod,
+    colorCustom : colorCustomMethod, 
+    bgCustom : backgroundCustomMethod,
+    reset : resetMethod,
+    ...fontStyleMethod,
 }
-
-// Add font colors Method
-baseColors.forEach((element : string, index : number) => {
-    CC.color[element] = addMethod(30 + index, 39)
-}) ;
-
-
-// Add background colors Method
-baseColors.forEach((element : string, index : number) => {
-    CC.background[element] = addMethod(40 + index, 39)
-}) ;
-
-baseStyles.forEach((element : string, index : number) => {
-    CC[element] = addMethod(index + 1, index + 21)
-}) ;
-
-console.log(CC)
-
 
 export default CC
