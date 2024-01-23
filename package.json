@@ -1,11 +1,11 @@
 {
-  "name": "npm-public-package-test",
+  "name": "colorful-console",
   "version": "1.0.6",
   "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
   "scripts": {
-    "test": "rimraf ./npm-public-package-test-*.tgz && npm pack && npm install ./npm-public-package-test-*.tgz && jest && npm uninstall npm-public-package-test",
+    "test": "./node_modules/.bin/rimraf ./colorful-console-*.tgz && npm pack && npm install ./colorful-console-*.tgz && jest && npm uninstall colorful-console-test",
     "clean": "./node_modules/.bin/rimraf ./lib",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "./node_modules/.bin/tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
@@ -44,6 +44,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HeesuKim0203/npm-package-template.git"
+    "url": "https://github.com/HeesuKim0203/colorful-console.git"
   }
 }

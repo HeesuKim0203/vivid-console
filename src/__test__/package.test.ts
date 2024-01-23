@@ -1,4 +1,4 @@
-import { helloWorld } from "npm-public-package-test"
+import { helloWorld } from "colorful-console"
 
 
 test('Hello world function test', () => {
