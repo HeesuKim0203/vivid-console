@@ -1,0 +1,4 @@
+node_modules
+*.tgz
+__test__
+.github

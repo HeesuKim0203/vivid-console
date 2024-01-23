@@ -1,0 +1,49 @@
+{
+  "name": "npm-public-package-test",
+  "version": "1.0.6",
+  "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
+  "types": "./lib/cjs/types/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "scripts": {
+    "test": "rimraf ./npm-public-package-test-*.tgz && npm pack && npm install ./npm-public-package-test-*.tgz && jest && npm uninstall npm-public-package-test",
+    "clean": "./node_modules/.bin/rimraf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "./node_modules/.bin/tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "./node_modules/.bin/tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "keywords": [],
+  "author": "heesukim",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "jest": "^29.7.0",
+    "jest-config": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeesuKim0203/npm-package-template.git"
+  }
+}
