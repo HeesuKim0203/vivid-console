@@ -4,8 +4,11 @@
   "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
+  "browser": {
+    "colorful-console": "./dist/eight-colors.js"
+  },
   "scripts": {
-    "test": "jest",
+    "test": "./node_modules/.bin/ts-node ./src/test.ts",
     "clean": "./node_modules/.bin/rimraf ./lib",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "./node_modules/.bin/tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",

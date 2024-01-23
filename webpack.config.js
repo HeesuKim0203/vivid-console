@@ -4,11 +4,11 @@ module.exports = {
     entry: './src/index.ts',
     module: {
         rules: [
-        {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ],
     },
     resolve: {
@@ -17,5 +17,8 @@ module.exports = {
     output: {
         filename: 'cc-bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        library: 'CC',
+        libraryTarget: 'window',
+        libraryExport: 'default'
     }
 }

@@ -1,4 +1,4 @@
-import { baseColors, baseStyles } from "."
+import { baseColors, baseStyles } from './data'
 
 export type CCMethod = (text : string) => string
 export type CustomMethod = (num : number, text : string) => string

@@ -1,3 +1,0 @@
-import CC from '.'
-
-test('')

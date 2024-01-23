@@ -1,7 +1,5 @@
-import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod } from "./type"
-
-export const baseColors = [ 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' ] as const
-export const baseStyles = [ 'bold', 'faint', 'italic', 'underline', 'inverse', 'hidden', 'strike' ] as const
+import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod } from './type'
+import { baseColors, baseStyles } from './data'
 
 const setANSI = (startNum : number, text : string) : string => {
     const setStart = `\u001b[${startNum}m`
