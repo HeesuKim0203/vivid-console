@@ -1,4 +1,4 @@
-import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod } from './type'
+import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod, WebConsoleCustomMethod } from './type'
 import { baseColors, baseStyles } from './data'
 
 const setANSI = (startNum : number, text : string) : string => {
@@ -16,10 +16,22 @@ const setBackgroundANSI256 = (startNum : number, text : string) : string => {
     return `${setStart}${text}\u001b[0m`
 }
 
-
+// Common method
 const addMethod = (startNum : number) : CCMethod => {
     return (text : string) => setANSI(startNum, text)
 }
+
+// Style reset method
+const resetMethod : CCMethod = (text : string) => setANSI(0, text)
+
+// Custom color method
+const colorCustomMethod : CustomMethod = (colorNum : number, text : string) => setColorANSI256(colorNum, text)
+
+// Custom background method
+const backgroundCustomMethod : CustomMethod = (colorNum : number, text : string) => setBackgroundANSI256(colorNum, text)
+
+// Web console custom method
+const webConsoleCustomMethod : WebConsoleCustomMethod = (style : string, text : string) => { console.log(`%c${text}`, style) }
 
 // Add font colors method
 const colorMethod = baseColors.reduce((prev : object, element : string, index : number) : object => {
@@ -45,21 +57,6 @@ const fontStyleMethod = baseStyles.reduce((prev : object, element : string, inde
     }
 }, {}) as CCFontStyleType
 
-// Style reset method
-const resetMethod : CCMethod = (text : string) => {
-    return setANSI(0, text)
-} 
-
-// Custom color method
-const colorCustomMethod : CustomMethod = (colorNum : number, text : string) => {
-    return setColorANSI256(colorNum, text)
-} 
-
-// Custom background method
-const backgroundCustomMethod : CustomMethod = (colorNum : number, text : string) => {
-    return setBackgroundANSI256(colorNum, text)
-} 
-
 // Colorful Console
 const CC : CCType = {
     color : colorMethod,
@@ -67,6 +64,7 @@ const CC : CCType = {
     colorCustom : colorCustomMethod, 
     bgCustom : backgroundCustomMethod,
     reset : resetMethod,
+    webConsole : webConsoleCustomMethod,
     ...fontStyleMethod,
 }
 

@@ -2,6 +2,7 @@ import { baseColors, baseStyles } from './data'
 
 export type CCMethod = (text : string) => string
 export type CustomMethod = (num : number, text : string) => string
+export type WebConsoleCustomMethod = (style : string, text : string) => void
 
 type ListToObject<T extends readonly string[]> = {
     [ P in T[number] ] : CCMethod
@@ -17,5 +18,6 @@ export type CCType = {
     bg : ColorType
     colorCustom : CustomMethod
     bgCustom : CustomMethod
+    webConsole : WebConsoleCustomMethod
     reset : CCMethod
 }
