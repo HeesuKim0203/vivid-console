@@ -1,8 +1,8 @@
-# Rainbow-Console
+# Vivid Console
 
 ## Purpose
 
-Rainbow Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
+Vivid Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
 
 ## Features
 1. Supports ESM, CommonJS, and browser environments.
@@ -15,80 +15,80 @@ Rainbow Console is an ideal tool for those who want to add a splash of color to 
 ![console](/scripts/public/tsTest.png)
 
 ### Web console
-![web conosle](/scripts/public/webConsoleTest.png)
+![webconosle](/scripts/public/webConsoleTest.PNG)
 
 
 ## Getting Started
-To start using Rainbow Console, install the package using npm
+To start using Vivid Console, install the package using npm
 
 ```bash
-npm install rainbow-console
+npm install vivid-console
 ```
 
 This library is compatible with various environments including JavaScript, TypeScript, and browsers, supporting both ES5 and ES6 standards.
 
 ### Font Color
 ```javascript
-console.log(CC.color.red("test"))
+console.log(VC.color.red("test"))
 ```
 
 ### Background Color
 ```javascript
-console.log(CC.bg.red("test"))
+console.log(VC.bg.red("test"))
 ```
 
 ### Font Style
 ```javascript
-console.log(CC.bold("test"))
+console.log(VC.bold("test"))
 ```
 
 ### Custom color
 You can enter the number of the color you want to use as the first argument.
 ![](/scripts/public/customColor.png)
 ```javascript
-console.log(CC.colorCustom(146, "test"))
+console.log(VC.colorCustom(146, "test"))
 ```
 ```javascript
-console.log(CC.bgCustom(146, "test"))
+console.log(VC.bgCustom(146, "test"))
 ```
 
 ### Custom web console color
 For the web, enter css! Some unsupported css.
 ```javascript
-CC.console("color : #999999 ; background : #000000 ;", "test")
+VC.console("color : #999999 ; background : #000000 ;", "test")
 ```
 
 ### ES5 Usage
 ```javascript
-var CC = require('rainbow-console'); 
+var VC = require('vivid-console'); 
 
 console.log("This is a common log");
-console.log(CC.bgCustom(146, "Custom background")); 
-console.log(CC.colorCustom(142, "Custom color")); 
-console.log(CC.color.red("Red text")); 
-console.log(CC.bold("Bold text")); 
+console.log(VC.bgCustom(146, "Custom background")); 
+console.log(VC.colorCustom(142, "Custom color")); 
+console.log(VC.color.red("Red text")); 
+console.log(VC.bold("Bold text")); 
 ```
 
 ### ES6 Usage
 ```typescript
-import CC from 'rainbow-console'; 
+import VC from 'vivid-console'; 
 
 console.log("This is a common log");
-console.log(CC.bgCustom(146, "Custom background"));
-console.log(CC.colorCustom(142, "Custom color")); 
-console.log(CC.color.red("Red text")); 
-console.log(CC.bold("Bold text"));
+console.log(VC.bgCustom(146, "Custom background"));
+console.log(VC.colorCustom(142, "Custom color")); 
+console.log(VC.color.red("Red text")); 
+console.log(VC.bold("Bold text"));
 ```
 
 ### Browser Usage Example
 ```html
-<script src="your-path/rainbow-console/dist/index.bundle.js"></script>
+<script src="your-path/vivid-console/dist/index.bundle.js"></script>
 <script>
     console.log("This is a common log");
-    console.log(CC.bgCustom(146, "Custom background"));
-    console.log(CC.colorCustom(142, "Custom color")); 
-    console.log(CC.color.red("Red text")); 
-    console.log(CC.bold("Bold text"));
+    console.log(VC.bgCustom(146, "Custom background"));
+    console.log(VC.colorCustom(142, "Custom color")); 
+    console.log(VC.color.red("Red text")); 
+    console.log(VC.bold("Bold text"));
 </script>
 ```
 

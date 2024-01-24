@@ -1,34 +1,34 @@
-import CC from 'vivid-console'
+import VC from 'vivid-console'
 import { baseStyles } from '../src/data'
-import type { RCFontStyleType, ColorType } from '../src/type'
+import type { VCFontStyleType, ColorType } from '../src/type'
 
 console.log("common log")
 
-console.log(CC.bgCustom(146, "test"))
-console.log(CC.colorCustom(142, "test"))
+console.log(VC.bgCustom(146, "test"))
+console.log(VC.colorCustom(142, "test"))
 
-console.log(CC.color.red(CC.bgCustom(146, "test")))
-console.log(CC.bold(CC.colorCustom(188, "test")))
+console.log(VC.color.red(VC.bgCustom(146, "test")))
+console.log(VC.bold(VC.colorCustom(188, "test")))
 
-const colorKeys = Object.keys(CC.color) as Array<keyof ColorType>
+const colorKeys = Object.keys(VC.color) as Array<keyof ColorType>
 for (const key of colorKeys) {
-    const method = CC.color[key]
+    const method = VC.color[key]
     if (typeof method === 'function') {
         console.log(method("test")) 
     }
 }
 
-const bgKeys = Object.keys(CC.bg) as Array<keyof ColorType>
+const bgKeys = Object.keys(VC.bg) as Array<keyof ColorType>
 for (const key of bgKeys) {
-    const method = CC.bg[key];
+    const method = VC.bg[key];
     if (typeof method === 'function') {
         console.log(method("test"))
     }
 }
 
-const fontStyleKeys = Object.keys(CC) as Array<keyof RCFontStyleType>
+const fontStyleKeys = Object.keys(VC) as Array<keyof VCFontStyleType>
 for (const key of fontStyleKeys) {
-    const method = CC[key]
+    const method = VC[key]
     if (typeof method === 'function' && baseStyles.includes(key)) {
         console.log(method("test")) 
     }

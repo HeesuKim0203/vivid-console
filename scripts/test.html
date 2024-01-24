@@ -10,27 +10,27 @@
 <script src="../node_modules/vivid-console/dist/index.bundle.js"></script>
 <script>
 
-    const colorKeys = Object.keys(CC.color)
+    const colorKeys = Object.keys(VC.color)
     for (const key of colorKeys) {
-        const method = CC.color[key]
+        const method = VC.color[key]
         if (typeof method === 'function') {
             console.log(method("test")) 
         }
     }
 
-    const bgKeys = Object.keys(CC.bg)
+    const bgKeys = Object.keys(VC.bg)
     for (const key of bgKeys) {
-        const method = CC.bg[key];
+        const method = VC.bg[key];
         if (typeof method === 'function') {
             console.log(method("test"))
         }
     }
 
-    console.log(CC.bold("test"))
-    console.log(CC.underline("test"))
-    console.log(CC.italic("test"))
+    console.log(VC.bold("test"))
+    console.log(VC.underline("test"))
+    console.log(VC.italic("test"))
 
-    CC.console("color : #999999 ; background : #000000 ;", "test")
+    VC.console("color : #999999 ; background : #000000 ;", "test")
 
 </script>
 </html>
