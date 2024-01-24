@@ -18,6 +18,6 @@ export type CCType = {
     bg : ColorType
     colorCustom : CustomMethod
     bgCustom : CustomMethod
-    webConsole : WebConsoleCustomMethod
+    console : WebConsoleCustomMethod
     reset : CCMethod
 }

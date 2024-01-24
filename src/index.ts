@@ -64,7 +64,7 @@ const CC : CCType = {
     colorCustom : colorCustomMethod, 
     bgCustom : backgroundCustomMethod,
     reset : resetMethod,
-    webConsole : webConsoleCustomMethod,
+    console : webConsoleCustomMethod,
     ...fontStyleMethod,
 }
 

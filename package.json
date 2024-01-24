@@ -9,7 +9,7 @@
     "colorful-console": "./dist/index.bundle.js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/ts-node ./scripts/test.ts && node ./scripts/test.js",
+    "test": "ts-node ./scripts/test.ts && node ./scripts/test.js",
     "clean": "rm -rf ./lib && rm -rf ./dist",
     "build": "npm run clean && webpack --mode production"
   },
