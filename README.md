@@ -1,8 +1,8 @@
-# CC log(Colorful Console log)
+# Rainbow-Console
 
 ## Purpose
 
-CC Log is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
+Rainbow Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
 
 ## Features
 1. Supports ESM, CommonJS, and browser environments.
@@ -19,10 +19,10 @@ CC Log is an ideal tool for those who want to add a splash of color to their con
 
 
 ## Getting Started
-To start using CC Log, install the package using npm
+To start using Rainbow Console, install the package using npm
 
 ```bash
-npm install cc-log
+npm install rainbow-console
 ```
 
 This library is compatible with various environments including JavaScript, TypeScript, and browsers, supporting both ES5 and ES6 standards.
@@ -60,7 +60,7 @@ CC.console("color : #999999 ; background : #000000 ;", "test")
 
 ### ES5 Usage
 ```javascript
-var CC = require('cc-log'); 
+var CC = require('rainbow-console'); 
 
 console.log("This is a common log");
 console.log(CC.bgCustom(146, "Custom background")); 
@@ -71,7 +71,7 @@ console.log(CC.bold("Bold text"));
 
 ### ES6 Usage
 ```typescript
-import CC from 'cc-log'; 
+import CC from 'rainbow-console'; 
 
 console.log("This is a common log");
 console.log(CC.bgCustom(146, "Custom background"));
@@ -82,7 +82,7 @@ console.log(CC.bold("Bold text"));
 
 ### Browser Usage Example
 ```html
-<script src="your-path/cc-log/dist/index.bundle.js"></script>
+<script src="your-path/rainbow-console/dist/index.bundle.js"></script>
 <script>
     console.log("This is a common log");
     console.log(CC.bgCustom(146, "Custom background"));

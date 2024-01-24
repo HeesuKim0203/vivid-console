@@ -1,4 +1,4 @@
-const CC = require('cc-log')
+const CC = require('rainbow-console')
 
 
 console.log("common log")
