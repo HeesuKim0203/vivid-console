@@ -1,4 +1,4 @@
-import type { CCType } from './type';
-declare const CC: CCType;
-export default CC;
+import type { BCType } from './type';
+declare const BC: BCType;
+export default BC;
 //# sourceMappingURL=index.d.ts.map

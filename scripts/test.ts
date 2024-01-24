@@ -1,6 +1,6 @@
-import CC from 'colorful-console'
+import CC from 'better-console'
 import { baseStyles } from '../src/data'
-import type { CCFontStyleType, ColorType } from '../src/type'
+import type { BCFontStyleType, ColorType } from '../src/type'
 
 console.log("common log")
 
@@ -26,7 +26,7 @@ for (const key of bgKeys) {
     }
 }
 
-const fontStyleKeys = Object.keys(CC) as Array<keyof CCFontStyleType>
+const fontStyleKeys = Object.keys(CC) as Array<keyof BCFontStyleType>
 for (const key of fontStyleKeys) {
     const method = CC[key]
     if (typeof method === 'function' && baseStyles.includes(key)) {

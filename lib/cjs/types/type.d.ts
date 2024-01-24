@@ -1,21 +1,21 @@
 import { baseColors, baseStyles } from './data';
-export type CCMethod = (text: string) => string;
+export type BCMethod = (text: string) => string;
 export type CustomMethod = (num: number, text: string) => string;
 export type WebConsoleCustomMethod = (style: string, text: string) => void;
 type ListToObject<T extends readonly string[]> = {
-    [P in T[number]]: CCMethod;
+    [P in T[number]]: BCMethod;
 };
 export type ColorType = ListToObject<typeof baseColors>;
-export type CCFontStyleType = ListToObject<typeof baseStyles>;
-export type CCType = {
-    [K in keyof CCFontStyleType]: CCFontStyleType[K];
+export type BCFontStyleType = ListToObject<typeof baseStyles>;
+export type BCType = {
+    [K in keyof BCFontStyleType]: BCFontStyleType[K];
 } & {
     color: ColorType;
     bg: ColorType;
     colorCustom: CustomMethod;
     bgCustom: CustomMethod;
     console: WebConsoleCustomMethod;
-    reset: CCMethod;
+    reset: BCMethod;
 };
 export {};
 //# sourceMappingURL=type.d.ts.map
