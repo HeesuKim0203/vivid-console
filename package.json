@@ -1,6 +1,6 @@
 {
   "name": "vivid-console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
@@ -36,18 +36,15 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "^29.5.11",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
+    "vivid-console": "file:vivid-console-1.0.1.tgz",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/HeesuKim0203/vivid-console.git"
-  },
-  "dependencies": {
-    "vivid-console": "file:vivid-console-1.0.0.tgz"
   }
 }

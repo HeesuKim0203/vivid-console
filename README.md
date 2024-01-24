@@ -12,7 +12,7 @@ Vivid Console is an ideal tool for those who want to add a splash of color to th
 ## Example
 
 ### Terminal
-![console](/scripts/public/tsTest.png)
+![console](/scripts/public/jsTest.png)
 
 ### Web console
 ![webconosle](/scripts/public/webConsoleTest.PNG)
