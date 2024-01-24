@@ -1,4 +1,4 @@
-import CC from 'rainbow-console'
+import CC from 'vivid-console'
 import { baseStyles } from '../src/data'
 import type { RCFontStyleType, ColorType } from '../src/type'
 

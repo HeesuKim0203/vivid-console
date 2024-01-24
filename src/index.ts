@@ -1,4 +1,4 @@
-import type { RCMethod, RCType, ColorType, RCFontStyleType, CustomMethod, WebConsoleCustomMethod } from './type'
+import type { VCMethod, VCType, ColorType, VCFontStyleType, CustomMethod, WebConsoleCustomMethod } from './type'
 import { baseColors, baseStyles } from './data'
 
 const setANSI = (startNum : number, text : string) : string => {
@@ -17,12 +17,12 @@ const setBackgroundANSI256 = (startNum : number, text : string) : string => {
 }
 
 // Common method
-const addMethod = (startNum : number) : RCMethod => {
+const addMethod = (startNum : number) : VCMethod => {
     return (text : string) => setANSI(startNum, text)
 }
 
 // Style reset method
-const resetMethod : RCMethod = (text : string) => setANSI(0, text)
+const resetMethod : VCMethod = (text : string) => setANSI(0, text)
 
 // Custom color method
 const colorCustomMethod : CustomMethod = (colorNum : number, text : string) => setColorANSI256(colorNum, text)
@@ -55,10 +55,10 @@ const fontStyleMethod = baseStyles.reduce((prev : object, element : string, inde
         ...prev,
         [ element ] : addMethod(index + 1)
     }
-}, {}) as RCFontStyleType
+}, {}) as VCFontStyleType
 
 // Better Console
-const RC : RCType = {
+const VC : VCType = {
     color : colorMethod,
     bg : backgroundMethod,
     colorCustom : colorCustomMethod, 
@@ -68,4 +68,4 @@ const RC : RCType = {
     ...fontStyleMethod,
 }
 
-export default RC
+export default VC

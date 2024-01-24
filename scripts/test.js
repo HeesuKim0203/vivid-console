@@ -1,4 +1,4 @@
-const CC = require('rainbow-console')
+const CC = require('vivid-console')
 
 
 console.log("common log")
