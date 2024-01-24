@@ -1,4 +1,4 @@
-import CC from 'better-console'
+import CC from 'cc-log'
 import { baseStyles } from '../src/data'
 import type { BCFontStyleType, ColorType } from '../src/type'
 

@@ -1,4 +1,4 @@
-const CC = require('better-console')
+const CC = require('cc-log')
 
 
 console.log("common log")

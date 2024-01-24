@@ -1,13 +1,13 @@
-# Better Console
+# CC log(Colorful Console log)
 
 ## Purpose
 
-Better Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
+CC Log is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
 
 ## Features
 1. Supports ESM, CommonJS, and browser environments.
 2. Wide range of colors and backgrounds, customizable for diverse needs.
-3. Built-in TypeScript type support for a better development experience.
+3. Built-in TypeScript type support for a CC development experience.
 
 ## Example
 
@@ -19,10 +19,10 @@ Better Console is an ideal tool for those who want to add a splash of color to t
 
 
 ## Getting Started
-To start using Better Console, install the package using npm
+To start using CC Log, install the package using npm
 
 ```bash
-npm install better-console
+npm install cc-log
 ```
 
 This library is compatible with various environments including JavaScript, TypeScript, and browsers, supporting both ES5 and ES6 standards.
@@ -60,7 +60,7 @@ CC.console("color : #999999 ; background : #000000 ;", "test")
 
 ### ES5 Usage
 ```javascript
-var CC = require('better-console'); 
+var CC = require('cc-log'); 
 
 console.log("This is a common log");
 console.log(CC.bgCustom(146, "Custom background")); 
@@ -71,7 +71,7 @@ console.log(CC.bold("Bold text"));
 
 ### ES6 Usage
 ```typescript
-import CC from 'better-console'; 
+import CC from 'cc-log'; 
 
 console.log("This is a common log");
 console.log(CC.bgCustom(146, "Custom background"));
@@ -82,7 +82,7 @@ console.log(CC.bold("Bold text"));
 
 ### Browser Usage Example
 ```html
-<script src="your-path/better-console/dist/index.bundle.js"></script>
+<script src="your-path/cc-log/dist/index.bundle.js"></script>
 <script>
     console.log("This is a common log");
     console.log(CC.bgCustom(146, "Custom background"));
