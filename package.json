@@ -46,5 +46,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/HeesuKim0203/colorful-console.git"
+  },
+  "dependencies": {
+    "colorful-console": "file:colorful-console-1.0.0.tgz"
   }
 }
