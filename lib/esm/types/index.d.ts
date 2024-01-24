@@ -1,6 +1,4 @@
-export declare function helloWorld(): string;
-declare const _default: {
-    helloWorld: typeof helloWorld;
-};
-export default _default;
+import type { CCType } from './type';
+declare const CC: CCType;
+export default CC;
 //# sourceMappingURL=index.d.ts.map

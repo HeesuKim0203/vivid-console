@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+</body>
+<script src="../node_modules/colorful-console/dist/index.bundle.js"></script>
+<script>
+
+    const colorKeys = Object.keys(CC.color)
+    for (const key of colorKeys) {
+        const method = CC.color[key]
+        if (typeof method === 'function') {
+            console.log(method("test")) 
+        }
+    }
+
+    const bgKeys = Object.keys(CC.bg)
+    for (const key of bgKeys) {
+        const method = CC.bg[key];
+        if (typeof method === 'function') {
+            console.log(method("test"))
+        }
+    }
+
+    console.log(CC.bold("test"))
+    console.log(CC.underline("test"))
+    console.log(CC.italic("test"))
+
+    CC.console("color : #999999 ; background : #000000 ;", "test")
+
+</script>
+</html>
