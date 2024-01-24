@@ -1,12 +1,12 @@
 {
-  "name": "colorful-console",
+  "name": "better-console",
   "version": "1.0.0",
   "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "browser": {
-    "colorful-console": "./dist/index.bundle.js"
+    "better-console": "./dist/index.bundle.js"
   },
   "scripts": {
     "test": "ts-node ./scripts/test.ts && node ./scripts/test.js",
@@ -46,8 +46,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/HeesuKim0203/colorful-console.git"
-  },
-  "dependencies": {
-    "colorful-console": "file:colorful-console-1.0.0.tgz"
   }
 }

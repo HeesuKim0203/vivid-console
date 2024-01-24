@@ -1,4 +1,4 @@
-const CC = require('colorful-console')
+const CC = require('better-console')
 
 
 console.log("common log")

@@ -1,4 +1,4 @@
-import type { CCMethod, CCType, ColorType, CCFontStyleType, CustomMethod, WebConsoleCustomMethod } from './type'
+import type { BCMethod, BCType, ColorType, BCFontStyleType, CustomMethod, WebConsoleCustomMethod } from './type'
 import { baseColors, baseStyles } from './data'
 
 const setANSI = (startNum : number, text : string) : string => {
@@ -17,12 +17,12 @@ const setBackgroundANSI256 = (startNum : number, text : string) : string => {
 }
 
 // Common method
-const addMethod = (startNum : number) : CCMethod => {
+const addMethod = (startNum : number) : BCMethod => {
     return (text : string) => setANSI(startNum, text)
 }
 
 // Style reset method
-const resetMethod : CCMethod = (text : string) => setANSI(0, text)
+const resetMethod : BCMethod = (text : string) => setANSI(0, text)
 
 // Custom color method
 const colorCustomMethod : CustomMethod = (colorNum : number, text : string) => setColorANSI256(colorNum, text)
@@ -55,10 +55,10 @@ const fontStyleMethod = baseStyles.reduce((prev : object, element : string, inde
         ...prev,
         [ element ] : addMethod(index + 1)
     }
-}, {}) as CCFontStyleType
+}, {}) as BCFontStyleType
 
-// Colorful Console
-const CC : CCType = {
+// Better Console
+const BC : BCType = {
     color : colorMethod,
     bg : backgroundMethod,
     colorCustom : colorCustomMethod, 
@@ -68,4 +68,4 @@ const CC : CCType = {
     ...fontStyleMethod,
 }
 
-export default CC
+export default BC
