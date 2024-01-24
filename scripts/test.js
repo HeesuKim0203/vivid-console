@@ -1,25 +1,24 @@
-const CC = require('better-console')
-
+const VC = require('vivid-console')
 
 console.log("common log")
 
-console.log(CC.bgCustom(146, "test"))
-console.log(CC.colorCustom(142, "test"))
+console.log(VC.bgCustom(146, "test"))
+console.log(VC.colorCustom(142, "test"))
 
-console.log(CC.color.red(CC.bgCustom(146, "test")))
-console.log(CC.bold(CC.colorCustom(188, "test")))
+console.log(VC.color.red(VC.bgCustom(146, "test")))
+console.log(VC.bold(VC.colorCustom(188, "test")))
 
-const colorKeys = Object.keys(CC.color)
+const colorKeys = Object.keys(VC.color)
 for (const key of colorKeys) {
-    const method = CC.color[key]
+    const method = VC.color[key]
     if (typeof method === 'function') {
         console.log(method("test")) 
     }
 }
 
-const bgKeys = Object.keys(CC.bg)
+const bgKeys = Object.keys(VC.bg)
 for (const key of bgKeys) {
-    const method = CC.bg[key];
+    const method = VC.bg[key];
     if (typeof method === 'function') {
         console.log(method("test"))
     }
