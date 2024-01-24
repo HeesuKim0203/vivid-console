@@ -12,7 +12,7 @@ Vivid Console is an ideal tool for those who want to add a splash of color to th
 ## Example
 
 ### Terminal
-![console](/scripts/public/jsTest.png)
+![console](/scripts/public/jsTest.PNG)
 
 ### Web console
 ![webconosle](/scripts/public/webConsoleTest.PNG)
@@ -93,7 +93,7 @@ console.log(VC.bold("Bold text"));
 ```
 
 ## Contributing
-Contributions are welcome! If you'd like to contribute, please follow the guidelines in the contribution documentation.
+Contributions are welcome! If you'd like to contribute, please send me a Pull requests!
 
 ## License
 Distributed under the MIT License. See LICENSE file for more detail

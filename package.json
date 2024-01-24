@@ -1,6 +1,6 @@
 {
   "name": "vivid-console",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The aim of this project is to enable developers to rapidly and efficiently deploy NPM public packages. This template is designed to allow users to create, manage, and distribute their NPM packages with minimal setup.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
