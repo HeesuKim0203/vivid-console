@@ -11,12 +11,15 @@ Vivid Console is an ideal tool for those who want to add a splash of color to th
 
 ## Example
 
+### Support
+The basic 8 colors are supported as follows!
+![Support](/scripts/public/support.png)
+
 ### Terminal
 ![console](/scripts/public/jsTest.PNG)
 
 ### Web console
 ![webconosle](/scripts/public/webConsoleTest.PNG)
-
 
 ## Getting Started
 To start using Vivid Console, install the package using npm
@@ -28,22 +31,46 @@ npm install vivid-console
 This library is compatible with various environments including JavaScript, TypeScript, and browsers, supporting both ES5 and ES6 standards.
 
 ### Font Color
+The basic 8 colors.
 ```javascript
 console.log(VC.color.red("test"))
+console.log(VC.color.black("test"))
+console.log(VC.color.red("test"))
+console.log(VC.color.green("test"))
+console.log(VC.color.yellow("test"))
+console.log(VC.color.blue("test"))
+console.log(VC.color.magenta("test"))
+console.log(VC.color.cyan("test"))
+console.log(VC.color.white("test"))
 ```
 
 ### Background Color
+The basic 8 colors.
 ```javascript
+console.log(VC.bg.black("test"))
 console.log(VC.bg.red("test"))
+console.log(VC.bg.green("test"))
+console.log(VC.bg.yellow("test"))
+console.log(VC.bg.blue("test"))
+console.log(VC.bg.magenta("test"))
+console.log(VC.bg.cyan("test"))
+console.log(VC.bg.white("test"))
 ```
 
 ### Font Style
 ```javascript
 console.log(VC.bold("test"))
+console.log(VC.faint("test"))
+console.log(VC.italic("test"))
+console.log(VC.underline("test"))
+console.log(VC.inverse("test"))
+console.log(VC.hidden("test"))
+console.log(VC.strike("test"))
 ```
 
 ### Custom color
-You can enter the number of the color you want to use as the first argument.
+You can enter the number of the color you want to use as the first argument.  
+<b>Web console is not supported!</b>
 ![](/scripts/public/customColor.png)
 ```javascript
 console.log(VC.colorCustom(146, "test"))
@@ -52,8 +79,9 @@ console.log(VC.colorCustom(146, "test"))
 console.log(VC.bgCustom(146, "test"))
 ```
 
-### Custom web console color
-For the web, enter css! Some unsupported css.
+### Custom web console
+Please insert your desired CSS as the first parameter.  
+<b>Only web console is supported!</b>
 ```javascript
 VC.console("color : #999999 ; background : #000000 ;", "test")
 ```
