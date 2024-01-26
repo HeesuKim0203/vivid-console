@@ -1,6 +1,12 @@
 # Vivid Console
 
+![NPM Version](https://img.shields.io/npm/v/vivid-console)
+![NPM Downloads](https://img.shields.io/npm/dw/vivid-console)
+
 ## Purpose
+
+This project is built with [template](https://github.com/HeesuKim0203/npm-package-template)!  
+If you're interested, please take a look!
 
 Vivid Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.
 
