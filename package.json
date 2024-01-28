@@ -1,6 +1,6 @@
 {
   "name": "vivid-console",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vivid Console is an ideal tool for those who want to add a splash of color to their console outputs. It enables styling in both Terminal and Web Console environments, making your logs more visually appealing and easier to read.",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
