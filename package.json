@@ -18,7 +18,8 @@
     "console",
     "styling",
     "log",
-    "javascript"
+    "javascript",
+    "terminal"
   ],
   "author": "heesukim",
   "license": "MIT",
