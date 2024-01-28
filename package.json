@@ -13,7 +13,14 @@
     "clean": "rm -rf ./lib && rm -rf ./dist",
     "build": "npm run clean && webpack --mode production"
   },
-  "keywords": [],
+  "keywords": [
+    "color",
+    "console",
+    "styling",
+    "log",
+    "javascript",
+    "terminal"
+  ],
   "author": "heesukim",
   "license": "MIT",
   "publishConfig": {
